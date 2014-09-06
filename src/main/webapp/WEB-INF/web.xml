@@ -23,6 +23,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
-        <url-pattern>/blog/*.jsp</url-pattern>
+        <url-pattern>*.jsp</url-pattern>
     </servlet-mapping>
 </web-app>
