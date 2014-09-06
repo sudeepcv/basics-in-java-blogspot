@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AdminController {
 
-    @RequestMapping("/addpost.jsp")
+    @RequestMapping("/")
     public String addPost() {
 
 
