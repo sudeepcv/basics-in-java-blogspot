@@ -13,7 +13,7 @@ import basicsInJavaBlogspot.repository.BlogRepository;
 @Controller
 public class AdminController {
 	@Autowired
-	private BlogRepository BlogRepository;
+	private BlogRepository blogRepository;
 	
     @RequestMapping("/addpost")
     public String addpost() {
@@ -27,7 +27,7 @@ public class AdminController {
     	blogpost.setContent(content);
     	blogpost.setTitle(title);
     	blogpost.setDate(new Date());
-    	BlogRepository.save(blogpost);
+    	blogRepository.save(blogpost);
     	return "addpost";
     }
 
