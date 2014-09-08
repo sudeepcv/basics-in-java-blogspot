@@ -117,7 +117,7 @@
                     <a href="blog-post.html"><b>${allPosts.title}</b></a>
                 </h3>
              
-                <p>${allPosts.Content }</p>
+                <p>${allPosts.content }</p>
               
                 <div>
                <a class="btn btn-primary" href="blog-post.html">Read More <i class="fa fa-angle-right"></i></a>   	               
