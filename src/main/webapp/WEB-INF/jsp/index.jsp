@@ -114,7 +114,7 @@
        
             <div class="col-md-11">
                 <h3>
-                    <a href="blog-post.html"><b>${allPosts.Title}</b></a>
+                    <a href="blog-post.html"><b>${allPosts.title}</b></a>
                 </h3>
              
                 <p>${allPosts.Content }</p>
