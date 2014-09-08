@@ -12,7 +12,7 @@ import basicsInJavaBlogspot.model.BlogPost;
 @Controller
 public class AdminController {
 	@Autowired
-	private BlogPost blogRepository;
+	private BlogPost blogPost;
 	
     @RequestMapping("/addpost")
     public String addpost() {
