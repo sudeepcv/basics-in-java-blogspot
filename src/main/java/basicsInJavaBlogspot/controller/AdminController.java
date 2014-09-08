@@ -15,7 +15,7 @@ import basicsInJavaBlogspot.repository.BlogRepository;
 public class AdminController {
 	@Autowired
 	private BlogRepository blogRepository;
-	
+	@RequestMapping("/")
 	public String allPost(){
 		return "index";
 	}
