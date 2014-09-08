@@ -109,7 +109,7 @@
             <div class="col-md-1 text-center">
 <c:set var="postDate" value="${allPosts.date}" />   
             	
-                <p class=""><h2><b><fmt:formatDate pattern="d" value="${postDate}" /></b></h2></p>
+                <p class=""><h2><b><fmt:formatDate pattern="dd" value="${postDate}" /></b></h2></p>
                 <p><b><fmt:formatDate pattern="MMMM" value="${postDate}" /></b></p>
                 <p><b><fmt:formatDate pattern="yyyy" value="${postDate}" /></b></p>
                 
