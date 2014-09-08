@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import basicsInJavaBlogspot.model.BlogPost;
+import basicsInJavaBlogspot.repository.BlogRepository;
 @Controller
 public class AdminController {
 	@Autowired
-	private BlogPost blogPost;
+	private BlogRepository blogRepository;
 	
     @RequestMapping("/addpost")
     public String addpost() {
@@ -26,7 +27,7 @@ public class AdminController {
     	blogpost.setContent(content);
     	blogpost.setTitle(title);
     	blogpost.setDate(new Date());
-    	
+    	blogRepository.save(blogpost);
     	return "addpost";
     }
 
