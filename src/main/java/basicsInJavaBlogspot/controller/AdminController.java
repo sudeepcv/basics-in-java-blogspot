@@ -28,7 +28,7 @@ public class AdminController {
     	
     	 Date dNow = new Date( );
          SimpleDateFormat ft = 
-         new SimpleDateFormat ("dd/M/yyyy");
+         new SimpleDateFormat ("dd/MMM/yyyy");
     	
     	blogpost.setContent(content+ft.format(dNow));
     	blogpost.setTitle(title);
