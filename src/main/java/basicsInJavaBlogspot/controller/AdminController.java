@@ -2,9 +2,11 @@ package basicsInJavaBlogspot.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +18,11 @@ public class AdminController {
 	@Autowired
 	private BlogRepository blogRepository;
 	@RequestMapping("/index")
-	public String allPost(){
+	public String allPost(Model model){
+		
+		List<BlogPost> allPost=blogRepository.findAll();
+		model.addAttribute("allPosts", allPost);
+		
 		return "index";
 	}
 	
