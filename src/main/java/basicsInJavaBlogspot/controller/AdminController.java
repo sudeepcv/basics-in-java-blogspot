@@ -16,6 +16,10 @@ public class AdminController {
 	@Autowired
 	private BlogRepository blogRepository;
 	
+	public String allPost(){
+		return "index";
+	}
+	
     @RequestMapping("/addpost")
     public String addpost() {
 
