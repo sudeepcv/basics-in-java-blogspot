@@ -102,7 +102,7 @@
                 <div class="row">
             <div class="col-md-8">
                 <h3>Add New Post</h3>
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form name="sentMessage" id="contactForm" novalidate action="addpostAction.html" method="POST">
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Blog Title:</label>
