@@ -1,5 +1,6 @@
 package basicsInJavaBlogspot.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,12 @@ public class AdminController {
     @RequestMapping(value="/addpostAction",method=RequestMethod.POST)
     public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content){
     	BlogPost blogpost=new BlogPost();
-    	blogpost.setContent(content);
+    	
+    	 Date dNow = new Date( );
+         SimpleDateFormat ft = 
+         new SimpleDateFormat ("dd/MM/yyyy");
+    	
+    	blogpost.setContent(content+ft.format(dNow));
     	blogpost.setTitle(title);
     	blogpost.setDate(new Date());
     
