@@ -27,6 +27,7 @@ public class AdminController {
     	blogpost.setContent(content);
     	blogpost.setTitle(title);
     	blogpost.setDate(new Date());
+    
     	blogRepository.save(blogpost);
     	return "addpost";
     }

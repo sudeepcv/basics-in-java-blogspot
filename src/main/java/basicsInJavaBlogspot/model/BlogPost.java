@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class BlogPost {
@@ -15,6 +17,7 @@ public class BlogPost {
 	private String Title;
 	@Column(columnDefinition="TEXT")
 	private String Content;
+	@Temporal(TemporalType.DATE)
 	private Date Date;
 	public String getContent() {
 		return Content;
