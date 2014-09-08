@@ -9,12 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import basicsInJavaBlogspot.model.BlogPost;
-
-import com.example.service.PersonService;
 @Controller
 public class AdminController {
 	@Autowired
-	private PersonService blogRepository;
+	private BlogPost blogRepository;
 	
     @RequestMapping("/addpost")
     public String addpost() {
