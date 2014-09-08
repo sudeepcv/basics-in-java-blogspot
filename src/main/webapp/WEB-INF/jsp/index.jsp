@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java"  contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %> 
     <%@ page import="java.util.Date" %>
     <%@ page import ="java.text.SimpleDateFormat" %>
+    <%@ page import ="javax.servlet.jsp.PageContent" %>     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -108,11 +109,11 @@
             <div class="col-md-1 text-center">
             	        <%! 
           
-     	 Date dNow = new Date( );
+     	 Date dNow = pageContext.getAttribute("allPosts.date");
           SimpleDateFormat d = new SimpleDateFormat ("d");
           %>    
             	
-                <p class=""><h2><b><%=d.format(dNow) %>></b></h2></p>
+                <p class=""><h2><b><%=d.format(dNow) %></b></h2></p>
                 <p><b> Deecember</b></p>
                 <p><b>2014</b></p>
                 
