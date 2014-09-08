@@ -106,15 +106,11 @@
   <c:forEach items="${allPosts}" var="allPosts">              
         <div class="row">
             <div class="col-md-1 text-center">
-            	        <%! 
-          
-     	 Date dNow = pageContext.getAttribute("allPosts.date");
-          SimpleDateFormat d = new SimpleDateFormat ("d");
-          %>    
+<c:set var="postDate" value="${allPosts.date}" />   
             	
-                <p class=""><h2><b><%=d.format(dNow) %></b></h2></p>
-                <p><b> Deecember</b></p>
-                <p><b>2014</b></p>
+                <p class=""><h2><b><fmt:formatDate pattern="d" value="${postDate}" /></b></h2></p>
+                <p><b><fmt:formatDate pattern="MMMM" value="${postDate}" /></b></p>
+                <p><b><fmt:formatDate pattern="yyyy" value="${postDate}" /></b></p>
                 
                
             </div>
