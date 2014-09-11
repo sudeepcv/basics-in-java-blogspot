@@ -1,6 +1,5 @@
 package basicsInJavaBlogspot.controller;
 
-import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -27,7 +26,7 @@ public class AdminController {
 		
 		return "index";
 	}
-	
+	@RequestMapping("/adminhome")
 	public String adminHome(Model model){
 		List<BlogPost> allPost=blogRepository.findAll();
 		model.addAttribute("allPosts", allPost);
@@ -45,10 +44,10 @@ public class AdminController {
     public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content){
     	BlogPost blogpost=new BlogPost();
     	
-    	 Date dNow = new Date( );
-         SimpleDateFormat ft = new SimpleDateFormat ("dd/MMMMM/yyyy");
-    	
-    	blogpost.setContent(content+ft.format(dNow));
+    	 //Date dNow = new Date( );
+       //  SimpleDateFormat ft = new SimpleDateFormat ("dd/MMMMM/yyyy");
+    	 //ft.format(dNow)
+    	blogpost.setContent(content);
     	blogpost.setTitle(title);
     	blogpost.setDate(new Date());
     
