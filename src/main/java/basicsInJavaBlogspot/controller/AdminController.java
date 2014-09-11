@@ -1,6 +1,7 @@
 package basicsInJavaBlogspot.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -21,9 +22,17 @@ public class AdminController {
 	public String allPost(Model model){
 		
 		List<BlogPost> allPost=blogRepository.findAll();
+		Collections.reverse(allPost);
 		model.addAttribute("allPosts", allPost);
 		
 		return "index";
+	}
+	
+	public String adminHome(Model model){
+		List<BlogPost> allPost=blogRepository.findAll();
+		model.addAttribute("allPosts", allPost);
+		
+		return "adminhome";
 	}
 	
     @RequestMapping("/addpost")
