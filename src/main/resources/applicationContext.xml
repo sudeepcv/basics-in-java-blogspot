@@ -18,7 +18,6 @@
     <jpa:repositories base-package="basicsInJavaBlogspot.repository"></jpa:repositories>
     
     <mvc:annotation-driven/>
-    
 
 	
 
