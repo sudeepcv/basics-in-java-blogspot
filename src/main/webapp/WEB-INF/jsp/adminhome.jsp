@@ -630,7 +630,7 @@
     <script src="js/bootstrap.min.js"></script>
     
       <script src="js/jquery.dataTables.min.js"></script>
-      <script src="js/jquery.dataTables.bootstrap.js"></script>
+      <script src="js/dataTables.bootstrap.js"></script>
     
     <script>
     $(document).ready(function() {
