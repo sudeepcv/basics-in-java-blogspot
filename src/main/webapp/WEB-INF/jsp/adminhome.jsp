@@ -139,12 +139,13 @@
                 <td><button type="button" class="btn btn-danger">Delete</button></td>
                 
             </tr>
+             </c:forEach>
         </tbody>
     </table>
         </div>
         </div>
         
- </c:forEach>
+
         
              
         
