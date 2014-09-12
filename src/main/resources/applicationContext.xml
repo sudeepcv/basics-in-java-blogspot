@@ -79,6 +79,6 @@
         </bean>
     </beans>
     
-    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0"/>
+    
 
 </beans>
