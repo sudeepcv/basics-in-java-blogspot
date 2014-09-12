@@ -228,7 +228,18 @@
     	    
     	        .one('click', '#delete', function (e) {
     	        	
-    	            alert("delete button clicked ajax call here ..");
+    	           
+    	        	
+    	            $.post('addpostAction.json', {postId:postId})
+                    .done(function () {
+                  	
+                      alert('success!');
+                    })
+                    .fail(function () {
+                        alert('error!');
+                    });
+    	        	
+    	        	
     	        });
     	});
         

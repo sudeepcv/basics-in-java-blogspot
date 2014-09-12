@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import basicsInJavaBlogspot.model.BlogPost;
 import basicsInJavaBlogspot.repository.BlogRepository;
@@ -53,6 +54,11 @@ public class AdminController {
     
     	blogRepository.save(blogpost);
     	return "addpost";
+    }
+    @RequestMapping(value="/deletePost",method=RequestMethod.POST)
+    public @ResponseBody String deletPost(@RequestParam("postId") Long postId){
+    	blogRepository.delete(postId);
+    	return "success";
     }
 
 }
