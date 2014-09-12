@@ -219,7 +219,7 @@
     $(document).ready(function() {
         $('#postsDataTable').dataTable();
         
-      	$('input[name="deletePost"]').on('click', function(e){
+      	$('button[name="deletePost"]').on('click', function(e){
     		var postIde=$(this).attr('id'); 
     	alert(postIde);    	    
     	    e.preventDefault();
