@@ -112,7 +112,7 @@
 
         <div class="row">
         <div class="col-lg-12">
-        <table id="example" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+        <table id="postsDataTable" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Title</th>
@@ -142,7 +142,7 @@
                 <td>${allPosts.content }</td>
                 <td>${allPosts.date}</td>
                 <td><button type="button" class="btn btn-warning">Edit</button></td>
-                <td><button type="button" class="btn btn-danger">Delete</button></td>
+                <td><button type="button" id="${allPosts.id} " class="btn btn-danger" name="deletePost">Delete</button></td>
                 
             </tr>
              </c:forEach>
@@ -194,9 +194,45 @@
     
     <script>
     $(document).ready(function() {
-        $('#example').dataTable();
+        $('#postsDataTable').dataTable();
+        
+      	$('input[name="deletePost"]').on('click', function(e){
+    		var postIde=$(this).attr('id'); 
+    	alert(postIde)    	    
+    	    e.preventDefault();
+    	    
+    	    $('#confirm').modal({ backdrop: 'static', keyboard: false })
+    	    
+    	        .one('click', '#delete', function (e) {
+    	        	
+    	            alert("delete button clicked ajax call here ..")
+    	        });
+    	});
+        
+        
     } );
     </script>
+    
+    
+    
+    		  <div class="modal fade" id="confirm">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Are you sure you want to delete This Organization??</h4>
+      </div>
+      <div class="modal-body">
+        <p>If you want to then click on yes else click on no!!&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" id="delete">Yes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
     
 
 </body>
