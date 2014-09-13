@@ -231,14 +231,8 @@
     	           
     	        	
     	            $.post('deletePost.json', {postId:postId})
-                    .done(function (data) {                  	
-                      $.each(data,function(key,val){
-                    	  var resId=val.successId;
-                    	  console.log(data);
-                    	  console.log(data.successId);
-                    	  console.log(resId);
-                      });
-                    	
+                    .done(function (data) {
+                    	 console.log(data.successId);
                     })
                     .fail(function () {
                         alert('error!');
