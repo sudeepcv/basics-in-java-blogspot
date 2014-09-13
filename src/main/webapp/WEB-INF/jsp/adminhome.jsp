@@ -220,7 +220,7 @@
         $('#postsDataTable').dataTable();
         
       	$('button[name="deletePost"]').on('click', function(e){
-    		var postIde=$(this).attr('id'); 
+    		var postId=$(this).attr('id'); 
     	alert(postIde);    	    
     	    e.preventDefault();
     	    
