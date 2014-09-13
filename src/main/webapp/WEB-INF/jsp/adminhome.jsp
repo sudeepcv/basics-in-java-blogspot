@@ -221,7 +221,7 @@
         
       	$('button[name="deletePost"]').on('click', function(e){
     		var postId=$(this).attr('id'); 
-    	  alert(postId);    	    
+    	      	    
     	    e.preventDefault();
     	    
     	    $('#confirm').modal({ backdrop: 'static', keyboard: false })
