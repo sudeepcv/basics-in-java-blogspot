@@ -118,13 +118,13 @@
        
             <div class="col-md-11">
                 <h3>
-                    <a href="blog-post.html"><b>${allPosts.title}</b></a>
+                    <a href="${allPosts.title}.html"><b>${allPosts.title}</b></a>
                 </h3>
              
                 <p>${allPosts.content }</p>
               
                 <div>
-               <a class="btn btn-primary" href="blog-post.html">Read More <i class="fa fa-angle-right"></i></a>   	               
+               <a class="btn btn-primary" href="${allPosts.title}.html">Read More <i class="fa fa-angle-right"></i></a>   	               
                 <div class="pull-right">
                 <ul class="list-inline">
                 	<a href="#"><i class="fa fa-clock-o"></i></a> 

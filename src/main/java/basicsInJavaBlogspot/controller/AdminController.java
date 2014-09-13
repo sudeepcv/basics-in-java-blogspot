@@ -32,8 +32,8 @@ public class AdminController {
 	@RequestMapping(value="/{postTitle}")
 	@Transactional
 	public String blogPost(@PathVariable("postTitle") String postTitle,Model model){
-		List<BlogPost> singlePost=blogRepository.findByTitleEquals(postTitle);
-		//model.addAttribute("singlePost",singlePost);
+		BlogPost singlePost=blogRepository.findByTitleEquals(postTitle);
+		model.addAttribute("singlePost",singlePost);
 		return "blogpost";
 	}
 	@RequestMapping("/adminhome")
