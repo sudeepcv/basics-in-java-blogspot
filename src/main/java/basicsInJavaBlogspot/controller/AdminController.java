@@ -59,7 +59,7 @@ public class AdminController {
     public @ResponseBody String deletPost(@RequestParam("postId") Long postId){
     	BlogPost deletedPost=blogRepository.findOne(postId);
     	blogRepository.delete(postId);
-    	return "{successid:" +postId+"}";
+    	return "{\"successId\":"+postId+"}";
     }
 
 }
