@@ -231,9 +231,8 @@
     	           
     	        	
     	            $.post('deletePost.json', {postId:postId})
-                    .done(function () {
-                  	
-                      alert('success!');
+                    .done(function (data) {                  	
+                      alert(data);
                     })
                     .fail(function () {
                         alert('error!');
