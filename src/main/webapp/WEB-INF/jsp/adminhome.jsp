@@ -234,8 +234,9 @@
                     .done(function (data) {                  	
                       $.each(data,function(key,val){
                     	  var resId=val.successId;
+                    	  alert(resId);
                       });
-                    	alert(resId);
+                    	
                     })
                     .fail(function () {
                         alert('error!');
