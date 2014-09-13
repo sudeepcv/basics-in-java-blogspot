@@ -232,7 +232,10 @@
     	        	
     	            $.post('deletePost.json', {postId:postId})
                     .done(function (data) {                  	
-                      alert(data);
+                      $.each(data,function(key,val){
+                    	  var resId=val.successId;
+                      });
+                    	alert(resId);
                     })
                     .fail(function () {
                         alert('error!');
