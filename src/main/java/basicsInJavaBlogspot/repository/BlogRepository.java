@@ -7,6 +7,8 @@ import basicsInJavaBlogspot.model.BlogPost;
 @Repository("blogRepository")
 public interface BlogRepository extends JpaRepository<BlogPost,Long> {
 
-	BlogPost findByTitle(String postTitle);
+	
+
+	BlogPost findByTitleEquals(String postTitle);
 
 }
