@@ -56,10 +56,10 @@ public class AdminController {
     	return "addpost";
     }
     @RequestMapping(value="/deletePost",method=RequestMethod.POST)
-    public @ResponseBody BlogPost deletPost(@RequestParam("postId") Long postId){
+    public @ResponseBody String deletPost(@RequestParam("postId") Long postId){
     	BlogPost deletedPost=blogRepository.findOne(postId);
     	blogRepository.delete(postId);
-    	return deletedPost;
+    	return "{successid:" +postId+"}";
     }
 
 }
