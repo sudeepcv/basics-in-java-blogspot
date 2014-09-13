@@ -230,7 +230,7 @@
     	        	
     	           
     	        	
-    	            $.post('addpostAction.json', {postId:postId})
+    	            $.post('deletePost.json', {postId:postId})
                     .done(function () {
                   	
                       alert('success!');
