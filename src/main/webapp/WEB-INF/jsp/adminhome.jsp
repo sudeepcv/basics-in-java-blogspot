@@ -138,7 +138,7 @@
         
           <c:forEach items="${allPosts}" var="allPosts">
             <tr>
-                <td>${allPosts.title}</td>
+                <td><a href="${allPosts.title}.html">${allPosts.title}</a></td>
                 <td>${allPosts.content }</td>
                 <td>${allPosts.date}</td>
                 <td><button type="button" class="btn btn-warning">Edit</button></td>
