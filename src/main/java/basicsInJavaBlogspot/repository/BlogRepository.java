@@ -9,5 +9,7 @@ import basicsInJavaBlogspot.model.BlogPost;
 @Repository("blogRepository")
 public interface BlogRepository extends JpaRepository<BlogPost,Long> {
 
+	List<BlogPost> findByTitleEquals(String postTitle);
+
 
 }
