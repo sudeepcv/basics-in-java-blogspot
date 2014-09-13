@@ -13,36 +13,35 @@ import javax.persistence.TemporalType;
 public class BlogPost {
 	@Id	
 	@GeneratedValue
-	private Long Id;
-	private String Title;
+	private Long id;
+	private String title;
 	@Column(columnDefinition="TEXT")
-	private String Content;
+	private String content;
 	@Temporal(TemporalType.DATE)
-	private Date Date;
+	private Date date;
 	public String getContent() {
-		return Content;
+		return content;
 	}
 	public Date getDate() {
-		return Date;
+		return date;
 	}
 	public Long getId() {
-		return Id;
+		return id;
 	}
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 	public void setContent(String content) {
-		Content = content;
+		this.content = content;
 	}
 	public void setDate(Date date) {
-		Date = date;
+		this.date = date;
 	}
 	public void setId(Long id) {
-		Id = id;
+		this.id = id;
 	}
 	public void setTitle(String title) {
-		Title = title;
-	}
-	
+		this.title = title;
+	}	
 
 }
