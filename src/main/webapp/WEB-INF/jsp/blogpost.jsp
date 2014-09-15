@@ -212,7 +212,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script>
     $(document).ready(function(){  
-    	$("#CommentSubmit").click(function(){
+    	$("#CommentSubmit").click(function(e){
+    		e.preventDefault();
     		
     		var formData=$("#commentForm").serializeArray();
     		
