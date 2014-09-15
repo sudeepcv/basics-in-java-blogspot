@@ -47,8 +47,8 @@ public class AdminController {
 	@Transactional
 	public @ResponseBody String addComments(@Valid Comment comments,BindingResult  bindingResult ,@RequestParam("postId") Long postId){
 		BlogPost blogPost=blogRepository.findOne(postId);
-		comments.getBlogPost().setId(postId);
-		//comments.setBlogPost(blogPost);
+		//comments.getBlogPost().setId(postId);
+		comments.setBlogPost(blogPost);
 		commentRepository.save(comments);
 			
 		return "{\"successId\":\""+postId+"\"}";
