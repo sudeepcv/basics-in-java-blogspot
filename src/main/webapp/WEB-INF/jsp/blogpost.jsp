@@ -142,6 +142,7 @@
                         	
                             <textarea class="form-control" rows="3" name="content" placeholder="Enter content"></textarea>
                         </div>
+                        <input type="hidden" name="postId" value="${singlePost.id}" />
                         <button type="submit" class="btn btn-primary" id="CommentSubmit">Submit</button>
                     </form>
                 </div>
