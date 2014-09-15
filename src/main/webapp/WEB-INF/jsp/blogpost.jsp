@@ -135,7 +135,7 @@
                     <h4>Leave a Comment:</h4>
                     <form role="form" id="commentForm">
                     	<div class="form-group">
-                    		<input type="text" class="form-control" placeholder="Name" name="title"/>
+                    		<input type="text" class="form-control" placeholder="Name" name="name"/>
                     	</div>
 
                         <div class="form-group">

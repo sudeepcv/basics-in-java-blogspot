@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import scala.annotation.meta.setter;
 import basicsInJavaBlogspot.model.BlogPost;
 import basicsInJavaBlogspot.model.Comment;
 import basicsInJavaBlogspot.repository.BlogRepository;
@@ -45,11 +44,13 @@ public class AdminController {
 		return "blogpost";
 	}
 	@RequestMapping(value="/addcomment",method=RequestMethod.POST)
+	@Transactional
 	public @ResponseBody String addComments(@Valid Comment comments,BindingResult  bindingResult ,@RequestParam("postId") Long postId){
-		BlogPost blogPost=new BlogPost();
-		blogPost.setId(postId);
-		blogPost.getComments().add(comments);
-		blogRepository.save(blogPost);		
+		BlogPost blogPost=blogRepository.findOne(postId);
+		
+		comments.setBlogPost(blogPost);
+		commentRepository.save(comments);
+			
 		return "{\"successId\":\""+postId+"\"}";
 	}
 	
