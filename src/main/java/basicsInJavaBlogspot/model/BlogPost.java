@@ -20,7 +20,7 @@ public class BlogPost {
 	@GeneratedValue
 	private Long id;
 	private String title;
-	@OneToMany(mappedBy="blogPost",cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="blogPost",cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<Comment> comments=new ArrayList<Comment>();
 	public List<Comment> getComments() {
 		return comments;
