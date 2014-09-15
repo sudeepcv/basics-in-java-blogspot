@@ -50,6 +50,8 @@ public class AdminController {
 		//comments.getBlogPost().setId(postId);
 		comments.setBlogPost(blogPost);
 		commentRepository.save(comments);
+		
+		
 			
 		return "{\"successId\":\""+postId+"\"}";
 	}
