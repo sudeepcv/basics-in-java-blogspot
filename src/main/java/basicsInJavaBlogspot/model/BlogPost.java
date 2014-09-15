@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -18,7 +20,7 @@ public class BlogPost {
 	@GeneratedValue
 	private Long id;
 	private String title;
-	@OneToMany(mappedBy="blogPost")
+	@OneToMany(mappedBy="blogPost",cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Comment> comments=new ArrayList<Comment>();
 	public List<Comment> getComments() {
 		return comments;
