@@ -133,16 +133,16 @@
                 <!-- Comments Form -->
                 <div class="well">
                     <h4>Leave a Comment:</h4>
-                    <form role="form">
+                    <form role="form" id="commentForm">
                     	<div class="form-group">
-                    		<input type="text" class="form-control" placeholder="Name" name="name"/>
+                    		<input type="text" class="form-control" placeholder="Name" name="title"/>
                     	</div>
 
                         <div class="form-group">
                         	
                             <textarea class="form-control" rows="3" name="content" placeholder="Enter content"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" id="CommentSubmit">Submit</button>
                     </form>
                 </div>
 
@@ -209,6 +209,26 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){  
+    	$("#CommentSubmit").click(function(){
+    		
+    		var formData=$("#commentForm").serializeArray();
+    		
+    		  $.post('addcomment.json', formData)
+              .done(function () {
+
+                  alert('success!');
+              })
+              .fail(function () {
+                  alert('error!');
+              });
+    		  
+    	});
+    	
+    });
+    </script>
+    
 
 </body>
 

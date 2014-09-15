@@ -4,10 +4,13 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,11 +18,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import basicsInJavaBlogspot.model.BlogPost;
+import basicsInJavaBlogspot.model.Comment;
 import basicsInJavaBlogspot.repository.BlogRepository;
+import basicsInJavaBlogspot.repository.CommentRepository;
 @Controller
 public class AdminController {
 	@Autowired
 	private BlogRepository blogRepository;
+	@Autowired
+	private CommentRepository commentRepository;
 	@RequestMapping("/index")
 	public String allPost(Model model){
 		
@@ -36,6 +43,15 @@ public class AdminController {
 		model.addAttribute("singlePost",singlePost);
 		return "blogpost";
 	}
+	@RequestMapping(value="/addcomment",method=RequestMethod.POST)
+	public @ResponseBody String addComments(@Valid Comment comments,BindingResult  bindingResult){
+		
+		commentRepository.save(comments);
+		String postId="ee";
+		
+		return "{\"successId\":\""+postId+"\"}";
+	}
+	
 	@RequestMapping("/adminhome")
 	public String adminHome(Model model){
 		List<BlogPost> allPost=blogRepository.findAll();
