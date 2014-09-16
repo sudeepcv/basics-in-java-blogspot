@@ -10,7 +10,7 @@ import basicsInJavaBlogspot.model.BlogReport;
 public interface BlogRepository extends JpaRepository<BlogPost,Long> {
 
 	BlogPost findByTitleEquals(String postTitle);
-@Query("Select new basicsInJavaBlogspot.model.BlogReport(b.title,b.content,b.date,c.name,c.content) from BlogPost b,Comment c where b.id=c.blogPost.id")
+@Query("Select new basicsInJavaBlogspot.model.BlogReport(b.title,b.content,b.date,c.name,c.content) from BlogPost b,Comment c where b.id=c.blogPost.id AND b.id=:blogId")
 	BlogReport getBlogReport(Long blogId);
 
 
