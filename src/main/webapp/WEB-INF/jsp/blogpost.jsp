@@ -109,9 +109,10 @@
             <!-- Blog Post Content Column -->
             <div class="col-lg-12">
             
-            <c:forEach items="${postReport}" var="report">
-            ${report.title}
-            ${report.blogContent}
+            <c:forEach items="${postReport}" var="report" varStatus="i">
+            ${report.title}<br>
+            ${report.blogContent}<br>
+            ${i}
             </c:forEach>
 
                 <!-- Blog Post -->
