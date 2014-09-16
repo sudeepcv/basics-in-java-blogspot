@@ -20,7 +20,7 @@
     <title>Basics In Java Blogspot</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/custom.css" rel="stylesheet">
@@ -254,7 +254,21 @@
           	  
     		}  });
     	
-
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+/*    	$("#CommentSubmit").click(function(e){
+    		e.preventDefault();
+    		
+    		var formData=$("#commentForm").serializeArray();
+    		
+    	
+    		  
+    	});*/
     	
     });
     </script>
