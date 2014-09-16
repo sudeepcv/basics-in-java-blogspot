@@ -121,9 +121,11 @@
         <table id="postsDataTable" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Date</th>           
+             <th>BlogTitle</th>
+                <th>Name</th>
+                <th>Content</th> 
+                <th>Status</th> 
+                <th>Approve</th>          
                 <th>Delete</th>
                 <th>Edit</th>
             </tr>
@@ -146,7 +148,7 @@
         
           <c:forEach items="${allComments}" var="allPosts">
             <tr>
-                <td><a href="${allPosts.content}.html">${allPosts.blogPost.content}</a></td>
+                <td><a href="${allPosts.title}.html">${allPosts.blogPost.title}</a></td>
                 <td>${allPosts.name }</td>
                 <td>${allPosts.content}</td>
                 <td>${allPosts.status}</td>
