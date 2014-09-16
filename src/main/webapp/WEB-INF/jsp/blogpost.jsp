@@ -231,7 +231,7 @@
   		        template: "<div style=\"color:red;\" class=\"popover\"><div class=\"arrow\"></div><div class=\"popover-inner\"><div class=\"popover-content\"><p></p></div></div></div>"
   		      });
   		      
-   varpopover.data("popover").options.content = value.message; 
+  // varpopover.data("popover").options.content = value.message; 
   		      return $(value.element).popover("show");
   		    });
   		  },submitHandler: function(form) {
