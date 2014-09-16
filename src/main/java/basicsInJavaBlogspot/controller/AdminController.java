@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import basicsInJavaBlogspot.model.BlogPost;
+import basicsInJavaBlogspot.model.BlogReport;
 import basicsInJavaBlogspot.model.Comment;
 import basicsInJavaBlogspot.repository.BlogRepository;
 import basicsInJavaBlogspot.repository.CommentRepository;
@@ -40,6 +41,9 @@ public class AdminController {
 	@Transactional
 	public String blogPost(@PathVariable("postTitle") String postTitle,Model model){
 		BlogPost singlePost=blogRepository.findByTitleEquals(postTitle);
+		Long BlogId=singlePost.getId();
+		BlogReport blogReport=blogRepository.getBlogReport(BlogId);
+		model.addAttribute("postReport",blogReport);
 		model.addAttribute("singlePost",singlePost);
 		return "blogpost";
 	}
