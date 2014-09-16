@@ -42,7 +42,7 @@ public class AdminController {
 	public String blogPost(@PathVariable("postTitle") String postTitle,Model model){
 		BlogPost singlePost=blogRepository.findByTitleEquals(postTitle);
 		Long BlogId=singlePost.getId();
-		List<BlogReport> blogReport=blogRepository.getBlogReport();
+		List<BlogReport> blogReport=blogRepository.getBlogReport(postTitle);
 		model.addAttribute("postReport",blogReport);
 		model.addAttribute("singlePost",singlePost);
 		return "blogpost";
