@@ -135,7 +135,8 @@
                 <!-- Comments Form -->
                 <div class="well">
                     <h4>Leave a Comment:</h4>
-                    <form role="form" id="commentForm" method="post">
+                    
+                    <form  id="commentForm" action="#" method="post" enctype="multipart/form-data">
                     	<div class="form-group">
                     		<input type="text" class="form-control" placeholder="Name" name="name"/>
                     	</div>
@@ -192,8 +193,9 @@
     </div>
     <!-- /.container -->
 
-    <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
+    <!-- jQuery Version 1.11.0 
+    <script src="js/jquery-1.11.0.js"></script>-->
+    <script  src="js/jquery-1.11.0.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -231,11 +233,11 @@
   		        template: "<div style=\"color:red;\" class=\"popover\"><div class=\"arrow\"></div><div class=\"popover-inner\"><div class=\"popover-content\"><p></p></div></div></div>"
   		      });
   		      
-  // varpopover.data("popover").options.content = value.message; 
+  varpopover.data("popover").options.content = value.message; 
   		      return $(value.element).popover("show");
   		    });
   		  },submitHandler: function(form) {
-    	          
+    	          alert("in submitHandler");
 
                 var formData = $('#commentForm').serializeArray();
               
