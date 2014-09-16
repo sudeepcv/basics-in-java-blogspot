@@ -67,6 +67,13 @@ public class AdminController {
 		
 		return "adminhome";
 	}
+	@RequestMapping("/allcomments")
+	public String allComments(Model model){
+		List<Comment> allcomments=commentRepository.findAll();
+		
+		model.addAttribute("allComments",allcomments);
+		return "allcomments";
+	}
 	
     @RequestMapping("/addpost")
     public String addpost() {
