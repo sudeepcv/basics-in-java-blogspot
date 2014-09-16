@@ -154,7 +154,7 @@
                 <!-- Posted Comments -->
 
                 <!-- Comment -->
-                
+             <div id="comments">  
        <c:forEach items="${postReport}" var="report" varStatus="i">
 
             
@@ -169,6 +169,7 @@
                 </div>
 </c:forEach>
 
+</div> 
 
             </div>
 
@@ -196,14 +197,50 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script  src="/js/jquery.validate.min.js"></script>
     <script>
-    $(document).ready(function(){  
-    	$("#CommentSubmit").click(function(e){
-    		e.preventDefault();
-    		
-    		var formData=$("#commentForm").serializeArray();
-    		
-    		  $.post('addcomment.json', formData)
+    $(document).ready(function(){
+    	
+    	$("#commentForm").validate({
+  		  rules: {
+  		    name: {
+  		      minlength: 3,
+  		      maxlength:30,
+  		      required: true
+  		    },
+  		  content:{
+  			   minlength:10,
+  			   maxLength:200,
+  		    	required:true
+  		    }
+
+  		    
+  		  },
+  		  showErrors: function(errorMap, errorList) {
+  		    $.each(this.successList, function(index, value) {
+  		      return $(value).popover("hide");
+  		    });
+  		    return $.each(errorList, function(index, value) {
+  		      var varpopover="nice";
+  		      console.log(value.message);
+  		      
+  		      varpopover = $(value.element).popover({
+  		        trigger: "manual",
+  		        placement: "top",
+  		        content: value.message,
+  		        template: "<div style=\"color:red;\" class=\"popover\"><div class=\"arrow\"></div><div class=\"popover-inner\"><div class=\"popover-content\"><p></p></div></div></div>"
+  		      });
+  		      
+   varpopover.data("popover").options.content = value.message; 
+  		      return $(value.element).popover("show");
+  		    });
+  		  },submitHandler: function(form) {
+    	          
+
+                var formData = $('#commentForm').serializeArray();
+              
+
+          	  $.post('addcomment.json', formData)
               .done(function () {
 
                   alert('success!');
@@ -211,8 +248,24 @@
               .fail(function () {
                   alert('error!');
               });
+          	  
+    		}  });
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+/*    	$("#CommentSubmit").click(function(e){
+    		e.preventDefault();
+    		
+    		var formData=$("#commentForm").serializeArray();
+    		
+    	
     		  
-    	});
+    	});*/
     	
     });
     </script>
