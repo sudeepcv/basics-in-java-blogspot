@@ -198,8 +198,9 @@
     <script  src="js/jquery-1.11.0.min.js"></script>
 
     <!-- Bootstrap Core JavaScript 
-    <script src="js/bootstrap.min.js"></script>-->
-    <script  src="js/bootstrap.min2.3.js"></script> 
+    <script  src="js/bootstrap.min2.3.js"></script> -->
+    <script src="js/bootstrap.min.js"></script>
+    
     <script  src="js/jquery.validate.min.js"></script>
     <script>
     $(document).ready(function(){
@@ -234,7 +235,7 @@
   		      return $(value.element).popover("show");
   		    });
   		  },submitHandler: function(form) {
-    	          alert("in submitHandler");
+    	          
 
                 var formData = $('#commentForm').serializeArray();
               
@@ -248,7 +249,7 @@
                       
                       $("#commentsId").prepend(htmlString);
 
-                  alert('success!');
+                 
               })
               .fail(function () {
                   alert('error!');
