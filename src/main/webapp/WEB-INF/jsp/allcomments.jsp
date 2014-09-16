@@ -131,9 +131,11 @@
  
         <tfoot>
             <tr>
-              <th>Title</th>
-                <th>Content</th>
-                <th>Date</th>           
+              <th>BlogTitle</th>
+                <th>Name</th>
+                <th>Content</th> 
+                <th>Status</th> 
+                <th>Approve</th>          
                 <th>Delete</th>
                 <th>Edit</th>
             </tr>
@@ -144,9 +146,11 @@
         
           <c:forEach items="${allComments}" var="allPosts">
             <tr>
-                <td><a href="${allPosts.content}.html">${allPosts.content}</a></td>
+                <td><a href="${allPosts.content}.html">${allPosts.blogPost.content}</a></td>
                 <td>${allPosts.name }</td>
                 <td>${allPosts.content}</td>
+                <td>${allPosts.status}</td>
+                <td><button type="button" class="btn btn-warning">Aprove</button></td>
                 <td><button type="button" class="btn btn-warning">Edit</button></td>
                 <td><button type="button" id="${allPosts.id} " class="btn btn-danger" name="deletePost">Delete</button></td>
                 
