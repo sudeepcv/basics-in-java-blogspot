@@ -148,7 +148,7 @@
         
           <c:forEach items="${allComments}" var="allPosts">
             <tr>
-                <td><a href="${allPosts.title}.html">${allPosts.blogPost.title}</a></td>
+                <td><a href="#">${allPosts.blogPost.title}</a></td>
                 <td>${allPosts.name }</td>
                 <td>${allPosts.content}</td>
                 <td>${allPosts.status}</td>
