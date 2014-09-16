@@ -138,12 +138,12 @@
                     
                     <form  id="commentForm" action="#" method="post" enctype="multipart/form-data">
                     	<div class="form-group">
-                    		<input type="text" class="form-control" placeholder="Name" name="name"/>
+                    		<input type="text" id="commentName" class="form-control" placeholder="Name" name="name"/>
                     	</div>
 
                         <div class="form-group">
                         	
-                            <textarea class="form-control" rows="3" name="content" placeholder="Enter content"></textarea>
+                            <textarea id="commentContent" class="form-control" rows="3" name="content" placeholder="Enter content"></textarea>
                         </div>
                         <input type="hidden" name="postId" value="${singlePost.id}" />
                         <button type="submit" class="btn btn-primary" id="CommentSubmit">Submit</button>
@@ -155,7 +155,7 @@
                 <!-- Posted Comments -->
 
                 <!-- Comment -->
-             <div id="comments">  
+             <div id="commentsId">  
        <c:forEach items="${postReport}" var="report" varStatus="i">
 
             
@@ -241,6 +241,12 @@
 
           	  $.post('addcomment.json', formData)
               .done(function () {
+            	  var name=$("#commentName").val();
+            	  var commentContent=$("#commentContent").val();
+            	  var  htmlString="<div class=\"media\"><div class=\"media-body\"><h4 class=\"media-heading\">"+name+  
+                      "</h4>"+commentContent+"</div></div>";
+                      
+                      $("#commentsId").prepend(htmlString);
 
                   alert('success!');
               })
