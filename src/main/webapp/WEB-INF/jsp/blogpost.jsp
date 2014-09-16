@@ -210,12 +210,8 @@
   		      minlength: 3,
   		      maxlength:30,
   		      required: true
-  		    },
-  		  content:{
-  			   minlength:10,
-  			   maxLength:200,
-  		    	required:true
   		    }
+
 
   		    
   		  },
