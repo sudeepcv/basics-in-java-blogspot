@@ -152,7 +152,7 @@
                 <td>${allPosts.name }</td>
                 <td>${allPosts.content}</td>
                 <td>${allPosts.status}</td>
-                <td><button type="button" class="btn btn-warning" id="{allPosts.id}" class="aproveButton">Aprove</button></td>
+                <td><button type="button" class="btn btn-warning aproveButton" id="${allPosts.id}" >Aprove</button></td>
                 <td><button type="button" class="btn btn-warning">Edit</button></td>
                 <td><button type="button" id="${allPosts.id} " class="btn btn-danger" name="deletePost">Delete</button></td>
                 
@@ -231,7 +231,7 @@
     $(document).ready(function() {
         $('#postsDataTable').dataTable();
         
-        $('button[class="aproveButton"]').on('click',function(e){
+        $('button[class="btn btn-warning aproveButton"]').on('click',function(e){
         	var commentId=$(this).attr('id');
         	e.preventDefault();
         	$.post('commentsAprove.json',{commentId:commentId})
