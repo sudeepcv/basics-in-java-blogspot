@@ -77,7 +77,7 @@ public class AdminController {
 	@RequestMapping(value="/commentsAprove",method=RequestMethod.POST)
 	public @ResponseBody String aproveComments(@RequestParam("commentId") Long commentId){
 		commentRepository.setStatus(commentId);
-		return "{\"success\":success}";
+		return "{\"success\":\"success\"}";
 	}
 	
     @RequestMapping("/addpost")
