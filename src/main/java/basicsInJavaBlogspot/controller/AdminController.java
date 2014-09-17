@@ -74,6 +74,11 @@ public class AdminController {
 		model.addAttribute("allComments",allcomments);
 		return "allcomments";
 	}
+	@RequestMapping(value="/commentsAprove",method=RequestMethod.POST)
+	public @ResponseBody String aproveComments(@RequestParam("commentId") Long commentId){
+		commentRepository.setStatus(commentId);
+		return "{\"success\":success}";
+	}
 	
     @RequestMapping("/addpost")
     public String addpost() {
