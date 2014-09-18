@@ -94,7 +94,7 @@ public class AdminController {
     	return "editpost";
     }
     @RequestMapping(value="/addpostAction",method=RequestMethod.POST)
-    public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content,@RequestParam(value="postId",defaultValue="0L") Long postId){
+    public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content,@RequestParam(value="postId",required=false,defaultValue="0L") Long postId){
     	
     		
     	
