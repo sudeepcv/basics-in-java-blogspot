@@ -102,6 +102,17 @@
                 <div class="row">
             <div class="col-md-8">
                 <h3>Add New Post</h3>
+                
+                	<div class="alert alert-success alert-block fade in" id="successAlertAddPost">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						
+						<h4>Success!</h4>
+						<p>Your organizational successfully Registered . now you can login with your username and password <a data-toggle="modal"  href="#loginModal" class="btn btn-primary">click here</a> to log in</p>
+					</div><!-- end alert -->
+					
+                
+                
+                
                 <form name="sentMessage" id="contactForm" novalidate action="addpostAction.html" method="POST">
                     <div class="control-group form-group">
                         <div class="controls">
@@ -161,6 +172,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+    
+    </script>
 
 </body>
 
