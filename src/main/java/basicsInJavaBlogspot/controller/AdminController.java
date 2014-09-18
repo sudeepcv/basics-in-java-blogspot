@@ -88,10 +88,16 @@ public class AdminController {
 
         return "addpost";
     }
+    
+   
     @RequestMapping("/editBlog")
-    public String editPosts(Model model,@RequestParam("postId") Long postId){
+    public String editPosts(Model model,@RequestParam("postId") Long postId,@RequestParam(value="success",defaultValue="") String success){
+    	if(success.length()>0)
+    		model.addAttribute("success", success);
+    	
     	BlogPost blogPost=blogRepository.findOne(postId);
     	model.addAttribute("blogpost",blogPost);
+    	
     	return "editpost";
     }
     @RequestMapping(value="/addpostAction",method=RequestMethod.POST)
@@ -113,7 +119,10 @@ public class AdminController {
     	blogpost.setDate(new Date());
     
     	blogRepository.save(blogpost);
-    	return "redirect:addpost.html?success=true";
+    	if(postId.length()!=0)
+    		return "redirect:editBlog.html?success=true";
+    	else
+    	   return "redirect:addpost.html?success=true";
     }
     @RequestMapping(value="/deletePost",method=RequestMethod.POST)
     public @ResponseBody String deletPost(@RequestParam("postId") Long postId){

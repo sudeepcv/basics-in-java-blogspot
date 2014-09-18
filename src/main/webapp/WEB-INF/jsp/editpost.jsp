@@ -101,7 +101,21 @@
         
                 <div class="row">
             <div class="col-md-8">
-                <h3>Add New Post</h3>
+                <h3>Edit Post</h3>
+                
+              <c:if test="${success != null}">
+
+
+                
+                	<div class="alert alert-success alert-block fade in" id="successAlertAddPost">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						
+						<h4>Success!</h4>
+						<p>Edited successfully</p>
+					</div><!-- end alert -->
+					
+                </c:if>
+                
                 <form name="sentMessage" id="contactForm" novalidate action="addpostAction.html" method="POST">
                 <input type="hidden" value="${blogpost.id }" name="postId" />
                     <div class="control-group form-group">

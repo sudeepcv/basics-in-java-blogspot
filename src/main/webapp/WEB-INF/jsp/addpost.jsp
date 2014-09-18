@@ -111,7 +111,7 @@
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						
 						<h4>Success!</h4>
-						<p>Your organizational successfully Registered . now you can login with your username and password <a data-toggle="modal"  href="#loginModal" class="btn btn-primary">click here</a> to log in</p>
+						<p>New Post Added successfully</p>
 					</div><!-- end alert -->
 					
                 </c:if>
