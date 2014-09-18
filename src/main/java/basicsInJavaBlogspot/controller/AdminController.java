@@ -97,11 +97,12 @@ public class AdminController {
     @Transactional
     public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content,@RequestParam(value="postId",defaultValue="") String postId){
     	
-    		Long postid=Long.parseLong(postId);
+    		
     	
     	BlogPost blogpost=new BlogPost();
-    	if(postId.length()!=0)
-    		blogpost.setId(postid);	
+    	if(postId.length()!=0){
+    		Long postid=Long.parseLong(postId);
+    		blogpost.setId(postid);}	
     	
     	 //Date dNow = new Date( );
        //  SimpleDateFormat ft = new SimpleDateFormat ("dd/MMMMM/yyyy");
