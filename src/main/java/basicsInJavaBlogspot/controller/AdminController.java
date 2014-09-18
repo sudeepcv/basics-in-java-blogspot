@@ -87,6 +87,12 @@ public class AdminController {
 
         return "addpost";
     }
+    @RequestMapping("/editBlog")
+    public String editPosts(Model model,@RequestParam("postId") Long postId){
+    	BlogPost blogPost=blogRepository.findOne(postId);
+    	model.addAttribute("blogpost",blogPost);
+    	return "editpost";
+    }
     @RequestMapping(value="/addpostAction",method=RequestMethod.POST)
     public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content){
     	BlogPost blogpost=new BlogPost();
