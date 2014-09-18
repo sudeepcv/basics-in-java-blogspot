@@ -147,7 +147,7 @@
                 <td><a href="${allPosts.title}.html">${allPosts.title}</a></td>
                 <td>${allPosts.content }</td>
                 <td>${allPosts.date}</td>
-                <td><a href="editBlog.html?editBlog=${allPosts.id}" type="button" class="btn btn-warning">Edit</a></td>
+                <td><a href="editBlog.html?postId=${allPosts.id}" type="button" class="btn btn-warning">Edit</a></td>
                 <td><button type="button" id="${allPosts.id} " class="btn btn-danger" name="deletePost">Delete</button></td>
                 
             </tr>
