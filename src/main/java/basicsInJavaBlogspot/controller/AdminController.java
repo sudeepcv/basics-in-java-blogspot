@@ -95,7 +95,7 @@ public class AdminController {
     }
     @RequestMapping(value="/addpostAction",method=RequestMethod.POST)
     @Transactional
-    public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content,@RequestParam(value="postId",required=false,defaultValue="") String postId){
+    public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content,@RequestParam(value="postId",defaultValue="") String postId){
     	
     		Long postid=Long.parseLong(postId);
     	
