@@ -226,7 +226,9 @@
         $('#postsDataTable').dataTable();
         
       	$('button[name="deletePost"]').on('click', function(e){
-    		var postId=$(this).attr('id'); 
+    		var postId=$(this).attr('id');
+    		
+    		var delTr=$(this).closest('tr');
     	      	    
     	    e.preventDefault();
     	    
@@ -238,6 +240,7 @@
     	        	
     	            $.post('deletePost.json', {postId:postId})
                     .done(function (data) {
+                    	delTr.remove();
                     	 console.log(data.successId);
                     })
                     .fail(function () {
