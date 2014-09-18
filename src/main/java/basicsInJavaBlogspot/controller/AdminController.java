@@ -94,8 +94,13 @@ public class AdminController {
     	return "editpost";
     }
     @RequestMapping(value="/addpostAction",method=RequestMethod.POST)
-    public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content){
+    public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content,@RequestParam(value="postId",defaultValue="0L") Long postId){
+    	
+    		
+    	
     	BlogPost blogpost=new BlogPost();
+    	if(postId!=0L)
+    		blogpost.setId(postId);	
     	
     	 //Date dNow = new Date( );
        //  SimpleDateFormat ft = new SimpleDateFormat ("dd/MMMMM/yyyy");
