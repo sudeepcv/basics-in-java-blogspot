@@ -103,6 +103,7 @@
             <div class="col-md-8">
                 <h3>Add New Post</h3>
                 <form name="sentMessage" id="contactForm" novalidate action="addpostAction.html" method="POST">
+                <input type="hidden" value="${blogpost.id }" name="postId" />
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Blog Title:</label>

@@ -94,13 +94,13 @@ public class AdminController {
     	return "editpost";
     }
     @RequestMapping(value="/addpostAction",method=RequestMethod.POST)
-    public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content,@RequestParam(value="postId",required=false,defaultValue="0L") Long postId){
+    public String addpostAction(@RequestParam("title") String title,@RequestParam("content") String content,@RequestParam(value="postId",required=false,defaultValue="") String postId){
     	
-    		
+    		Long postid=Long.parseLong(postId);
     	
     	BlogPost blogpost=new BlogPost();
-    	if(postId!=0L)
-    		blogpost.setId(postId);	
+    	if(postId.length()==0)
+    		blogpost.setId(postid);	
     	
     	 //Date dNow = new Date( );
        //  SimpleDateFormat ft = new SimpleDateFormat ("dd/MMMMM/yyyy");
