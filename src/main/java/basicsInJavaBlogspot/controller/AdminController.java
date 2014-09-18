@@ -82,8 +82,9 @@ public class AdminController {
 	}
 	
     @RequestMapping("/addpost")
-    public String addpost() {
-
+    public String addpost(@RequestParam(value="success",defaultValue="") String success,Model model) {
+    	if(success.length()>0)
+    		model.addAttribute("success", success);
 
         return "addpost";
     }
@@ -112,7 +113,7 @@ public class AdminController {
     	blogpost.setDate(new Date());
     
     	blogRepository.save(blogpost);
-    	return "addpost";
+    	return "redirect:addpost.html?success=true";
     }
     @RequestMapping(value="/deletePost",method=RequestMethod.POST)
     public @ResponseBody String deletPost(@RequestParam("postId") Long postId){

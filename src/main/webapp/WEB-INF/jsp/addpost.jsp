@@ -103,6 +103,10 @@
             <div class="col-md-8">
                 <h3>Add New Post</h3>
                 
+                <c:if test="${success != null}">
+
+
+                
                 	<div class="alert alert-success alert-block fade in" id="successAlertAddPost">
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						
@@ -110,7 +114,7 @@
 						<p>Your organizational successfully Registered . now you can login with your username and password <a data-toggle="modal"  href="#loginModal" class="btn btn-primary">click here</a> to log in</p>
 					</div><!-- end alert -->
 					
-                
+                </c:if>
                 
                 
                 <form name="sentMessage" id="contactForm" novalidate action="addpostAction.html" method="POST">
