@@ -120,7 +120,7 @@ public class AdminController {
     
     	blogRepository.save(blogpost);
     	if(postId.length()!=0)
-    		return "redirect:editBlog.html?success=true";
+    		return "redirect:editBlog.html?success=true&&postId="+postId;
     	else
     	   return "redirect:addpost.html?success=true";
     }
