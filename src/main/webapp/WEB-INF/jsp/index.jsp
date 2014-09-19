@@ -6,6 +6,7 @@
     <%@ page import="java.util.Date" %>
     <%@ page import ="java.text.SimpleDateFormat" %>  
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -108,6 +109,8 @@
         <div class="row">
             <div class="col-md-1 text-center">
 <c:set var="postDate" value="${allPosts.date}" />   
+ <c:set var="fulConten" value="${allPosts.content}"/>
+<c:set var="contentlill" value="${fn:substring(fulConten,0,100)}.." />
             	
                 <p class=""><h2><b><fmt:formatDate pattern="dd" value="${postDate}" /></b></h2></p>
                 <p><b><fmt:formatDate pattern="MMMM" value="${postDate}" /></b></p>
