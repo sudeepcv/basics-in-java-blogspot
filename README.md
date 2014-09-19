@@ -1,14 +1,10 @@
-# Spring MVC and Hibernate template application
+# Spring MVC and Hibernate with Spring Data JPA application
 
-This is a template for a web application that uses Spring MVC and Hibernate. The sample code is a simple CRUD page that manipulates records for a single model object.
+This is a simple web application that uses Spring MVC and Hibernate
+with Spring Data JPA.
 
-## Running the application locally
 
-First build with:
+Here is the link for the Application:
 
-    $mvn clean install
-
-Then run it with:
-
-    $java -jar target/dependency/webapp-runner.jar target/*.war
+http://basics-in-java-blogspot.herokuapp.com
 
