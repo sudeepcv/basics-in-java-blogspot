@@ -62,7 +62,7 @@
                 <ul class="nav navbar-nav navbar-right">
                 	
                 	<li >
-                		<a href="">Admin Home</a>
+                		<a href="adminhome.html">Admin Home</a>
                 		
                 		
                 		</li>
