@@ -124,7 +124,7 @@
                     <a href="${allPosts.title}.html"><b>${allPosts.title}</b></a>
                 </h3>
              
-                <p>${allPosts.content }</p>
+                <p>${contentlill }</p>
               
                 <div>
                <a class="btn btn-primary" href="${allPosts.title}.html">Read More <i class="fa fa-angle-right"></i></a>   	               
