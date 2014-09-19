@@ -49,11 +49,15 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                 	
-                	<li class="active">
-                		<a href="">Home</a>
+                	<li >
+                		<a href="adminhome.html">Home</a>
                 		
                 		
                 		</li>
+                		 <li class="active">
+                        <a href="">AddNew</a>
+                    </li>
+                		
                     <li>
                         <a href="about.html">About</a>
                     </li>

@@ -70,7 +70,7 @@
                         <a href="addpost.html">AddNew</a>
                     </li>
                    <li>
-                        <a href="comments.html">Comments</a>
+                        <a href="allcomments.html">Comments</a>
                     </li>
                     <li>
                         <a href="about.html">About</a>

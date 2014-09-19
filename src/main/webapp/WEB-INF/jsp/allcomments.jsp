@@ -61,11 +61,12 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                 	
-                	<li class="active">
-                		<a href="">Home</a>
+                	<li >
+                		<a href="">Admin Home</a>
                 		
                 		
                 		</li>
+                		<li class="active"><a href="">Allcomments</a> </li>
                 		 <li>
                         <a href="addpost.html">AddNew</a>
                     </li>
