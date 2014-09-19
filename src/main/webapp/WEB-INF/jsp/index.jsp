@@ -110,7 +110,7 @@
             <div class="col-md-1 text-center">
 <c:set var="postDate" value="${allPosts.date}" />   
  <c:set var="fulConten" value="${allPosts.content}"/>
-<c:set var="contentlill" value="${fn:substring(fulConten,0,100)}.." />
+<c:set var="contentlill" value="${fn:substring(fulConten,0,335)}.." />
             	
                 <p class=""><h2><b><fmt:formatDate pattern="dd" value="${postDate}" /></b></h2></p>
                 <p><b><fmt:formatDate pattern="MMMM" value="${postDate}" /></b></p>
