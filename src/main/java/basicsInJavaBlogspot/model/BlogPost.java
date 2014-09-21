@@ -29,7 +29,7 @@ public class BlogPost {
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
 	}
-	@Column(columnDefinition="TEXT")
+	@Column(columnDefinition="TEXT",length = 5000)
 	private String content;
 	@Temporal(TemporalType.DATE)
 	private Date date;
