@@ -25,6 +25,8 @@
 
     <!-- Custom CSS -->
     <link href="css/custom.css" rel="stylesheet">
+    
+    <link href="css/typeahedjs.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -180,6 +182,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/typeahed.bundle.js"></script>
 
 </body>
 
