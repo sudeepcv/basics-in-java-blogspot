@@ -78,7 +78,7 @@
              <li>
              	<form class="navbar-form navbar-left" role="search">
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search">
+    <input type="text" id="type-ahead" class="form-control" placeholder="Search">
   </div>
   <button class="btn btn-default" type="submit">
 <span class="glyphicon glyphicon-search"></span>
@@ -184,6 +184,19 @@
     <script src="js/bootstrap.min.js"></script>
     
     <script src="js/typeahed.bundle.js"></script>
+    
+        <script>
+
+        $(function () {
+
+            $('#type-ahead').typeahead(
+                {
+                 local:['abc','cdef','jkl']
+                }
+            );
+
+        });
+    </script>
 
 </body>
 
