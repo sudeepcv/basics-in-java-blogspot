@@ -1,5 +1,6 @@
 package basicsInJavaBlogspot.controller;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -47,6 +48,8 @@ public class AdminController {
 		model.addAttribute("singlePost",singlePost);
 		return "blogpost";
 	}
+	
+	
 	@RequestMapping(value="/addcomment",method=RequestMethod.POST)
 	@Transactional
 	public @ResponseBody String addComments(@Valid Comment comments,BindingResult  bindingResult ,@RequestParam("postId") Long postId){
@@ -58,6 +61,16 @@ public class AdminController {
 		
 			
 		return "{\"successId\":\""+postId+"\"}";
+	}
+	@RequestMapping("/getBlogTitles")
+	public @ResponseBody List getBlogTitles(@RequestParam("q") String q){
+		
+		List blogTitles=new ArrayList();
+		blogTitles=blogRepository.getAllTitles(q);
+		blogTitles.add("titleone");
+		blogTitles.add("titletwo");
+		
+		return blogTitles;
 	}
 	
 	@RequestMapping("/adminhome")
@@ -80,6 +93,8 @@ public class AdminController {
 		commentRepository.setStatus(commentId);
 		return "{\"success\":\"success\"}";
 	}
+	
+	
 	
     @RequestMapping("/addpost")
     public String addpost(@RequestParam(value="success",defaultValue="") String success,Model model) {

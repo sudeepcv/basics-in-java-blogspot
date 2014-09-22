@@ -97,6 +97,8 @@
 
     <!-- Page Content -->
     <div class="container">
+    
+    
 
         <div class="row">
             <div class="col-lg-12">
@@ -185,13 +187,16 @@
     
     <script src="js/typeahead.min.js"></script>
     
-        <script>
+    <script>
 
         $(function () {
 
             $('#type-ahead').typeahead(
                 {
-                 local:['abc','cdef','jkl']
+                    name: 'blog-title',
+                    remote: {
+                        url: 'getBlogTitles.json?q=%QUERY'
+                    }
                 }
             );
 
