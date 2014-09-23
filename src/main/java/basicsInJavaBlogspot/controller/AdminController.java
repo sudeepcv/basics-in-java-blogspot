@@ -71,6 +71,12 @@ public class AdminController {
 				
 		return blogTitles;
 	}
+	@RequestMapping(value="/searchBlog",method=RequestMethod.POST)
+	public String searchBytitle(@RequestParam("blogTitle") String blogTitle,Model model){
+		List<BlogPost> blogSearchResult=blogRepository.findByTitleContainingIgnoreCase(blogTitle);
+		model.addAttribute("searchResult", blogSearchResult);
+		return "searchResult";
+	}
 	
 	@RequestMapping("/adminhome")
 	public String adminHome(Model model){

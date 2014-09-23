@@ -76,7 +76,7 @@
            
              
              <li>
-             	<form class="navbar-form navbar-left" action="searchBlog.html" method="post" role="search">
+             	<form class="navbar-form navbar-left" role="search" action="searchBlog.html" method="post">
   <div class="form-group">
     <input type="text" name="blogTitle" id="type-ahead" class="form-control" placeholder="Search Blog">
   </div> 
@@ -115,7 +115,7 @@
                 <!-- Blog Post Row -->
     
                 
-  <c:forEach items="${allPosts}" var="allPosts">              
+  <c:forEach items="${searchResult}" var="allPosts">              
         <div class="row">
             <div class="col-md-1 text-center">
 <c:set var="postDate" value="${allPosts.date}" />   

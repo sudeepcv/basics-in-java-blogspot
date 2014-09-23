@@ -17,6 +17,7 @@ public interface BlogRepository extends JpaRepository<BlogPost,Long> {
 	List<BlogReport> getBlogReport(@Param("blogId") Long blogId);
 	@Query("Select b.title from BlogPost b where UPPER(b.title) like :strwithwild")
     List getAllBlogTitles(@Param(value="strwithwild")String strwithwild);
+	List<BlogPost> findByTitleContainingIgnoreCase(String blogTitle);
 
 
 }
