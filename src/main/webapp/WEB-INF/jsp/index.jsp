@@ -77,9 +77,18 @@
              
              <li>
              	<form class="navbar-form navbar-left" role="search">
+ <!--  <div class="form-group">
+    <input type="text" id="type-ahead" class="form-control" placeholder="Search Blog">
+  </div> -->
+  
   <div class="form-group">
-    <input type="text" id="type-ahead" class="form-control" placeholder="Search">
-  </div>
+        <div class="col-md-4">
+        <div class="input-group tt-input-group">
+            <input id="type-ahead" class="form-control" />
+        </div>
+    </div>
+</div>
+
   <button class="btn btn-default" type="submit">
 <span class="glyphicon glyphicon-search"></span>
 </button>
@@ -188,19 +197,30 @@
     <script src="js/typeahead.min.js"></script>
     
     <script>
-
+    $(document).ready(function(){
+    	
+    	$(document).on('typeahead:opened', function(event, datum) {
+    		
+    		  var width = $(event.target).width();
+    		  $('.tt-dropdown-menu').width(width);
+    		});
+    	
         $(function () {
-
             $('#type-ahead').typeahead(
-                {
-                    name: 'blog-title',
-                    remote: {
-                        url: 'getBlogTitles.json?q=%QUERY'
-                    }
-                }
-            );
+    {
+        name: 'blog-title',
+        remote: {
+            url: 'getBlogTitles.json?q=%QUERY'
+        }
+    }
+);
 
-        });
+});
+        
+    	
+    });
+    
+   
     </script>
 
 </body>

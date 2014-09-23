@@ -66,7 +66,7 @@ public class AdminController {
 	public @ResponseBody List getBlogTitles(@RequestParam("q") String q){
 		
 		List blogTitles=new ArrayList();
-		String strwithwild= "%"+q+"%";
+		String strwithwild= "%"+q.toUpperCase()+"%";
 		blogTitles=blogRepository.getAllBlogTitles(strwithwild);
 				
 		return blogTitles;

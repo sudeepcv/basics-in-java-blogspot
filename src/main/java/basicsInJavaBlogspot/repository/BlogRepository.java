@@ -15,7 +15,7 @@ public interface BlogRepository extends JpaRepository<BlogPost,Long> {
 	BlogPost findByTitleEquals(String postTitle);
     @Query("Select new basicsInJavaBlogspot.model.BlogReport(b.title,b.content,b.date,c.name,c.content) from BlogPost b,Comment c where b.id=c.blogPost.id AND b.id=:blogId AND c.status=true")
 	List<BlogReport> getBlogReport(@Param("blogId") Long blogId);
-	@Query("Select b.title from BlogPost b where b.title like :strwithwild")
+	@Query("Select b.title from BlogPost b where UPPER(b.title) like :strwithwild")
     List getAllBlogTitles(@Param(value="strwithwild")String strwithwild);
 
 
