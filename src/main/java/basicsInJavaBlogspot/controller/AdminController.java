@@ -66,10 +66,9 @@ public class AdminController {
 	public @ResponseBody List getBlogTitles(@RequestParam("q") String q){
 		
 		List blogTitles=new ArrayList();
-		blogTitles=blogRepository.getAllTitles(q);
-		blogTitles.add("titleone");
-		blogTitles.add("titletwo");
-		
+		String strwithwild= "%"+q+"%";
+		blogTitles=blogRepository.getAllBlogTitles(strwithwild);
+				
 		return blogTitles;
 	}
 	
