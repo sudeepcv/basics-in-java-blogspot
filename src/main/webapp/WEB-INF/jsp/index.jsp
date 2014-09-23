@@ -199,12 +199,12 @@
     <script>
     $(document).ready(function(){
     	
-    	$(document).on('typeahead:opened', function(event, datum) {
+    	/*$(document).on('typeahead:opened', function(event, datum) {
     		
     		  var width = $(event.target).width();
     		  $('.tt-dropdown-menu').width(width);
     		});
-    	
+    	*/
         $(function () {
             $('#type-ahead').typeahead(
     {
