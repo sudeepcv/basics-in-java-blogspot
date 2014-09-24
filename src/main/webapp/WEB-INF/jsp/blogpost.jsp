@@ -117,7 +117,9 @@
 
                 <!-- Date/Time -->
                 <h1>${singlePost.title}</h1>
-                <p><i class="fa fa-clock-o"></i> Posted on August 24, 2013 at 9:00 PM</p>
+                <c:set var="postDate" value="${singlePost.date}" /> 
+                
+                <p><i class="fa fa-clock-o"></i> Posted on <fmt:formatDate pattern="MMMM dd,yyyy" value="${postDate}" /> <fmt:formatDate pattern="h a" value="${postDate}" /></p>
 
           <hr>
 
