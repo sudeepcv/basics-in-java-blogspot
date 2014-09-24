@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +28,19 @@ import basicsInJavaBlogspot.repository.CommentRepository;
 @Controller
 public class AdminController {
 	@Autowired
+	ServletContext context;
+	
+	@Autowired
 	private BlogRepository blogRepository;
 	@Autowired
 	private CommentRepository commentRepository;
 	@RequestMapping("/index")
-	public String allPost(Model model){
-		
+	public String allPost(Model model, HttpServletRequest request){
+		System.out.println(request.getRemoteAddr());
+		System.out.println(request.getRemoteHost());
+		System.out.println(request.getRemotePort());
+		System.out.println(request.getRemoteUser());
+		System.out.println(request.getHeader("User-Agent"));
 		List<BlogPost> allPost=blogRepository.findAll();
 		Collections.reverse(allPost);
 		model.addAttribute("allPosts", allPost);
@@ -85,6 +94,9 @@ public class AdminController {
 		
 		return "adminhome";
 	}
+	
+
+	
 	@RequestMapping("/allcomments")
 	public String allComments(Model model){
 		List<Comment> allcomments=commentRepository.findAll();

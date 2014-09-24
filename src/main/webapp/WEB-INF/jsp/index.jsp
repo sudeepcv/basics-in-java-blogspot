@@ -141,9 +141,12 @@
                 <div class="pull-right">
                 <ul class="list-inline">
                 	<a href="#"><i class="fa fa-clock-o"></i></a> 
-                	<li><a href="#">4 Days Ago</a></li>
-                	<li><a href="#"><i class="glyphicon glyphicon-comment"></i> 7 Comments</a></li>
-                	<li><a href="#"><i class="glyphicon glyphicon-share"></i> 56 Shares</a></li></ul>
+                	<li><a href="#">
+                	<abbr class="timeago" title="${allPosts.date}">${postDate}</abbr>
+                	</a></li>
+                	
+                	<li><a href="#"><i class="glyphicon glyphicon-comment"></i> ${fn:length(allPosts.comments)} Comments</a></li>
+                	
                 	</div>
                </div>
             </div>
@@ -188,9 +191,11 @@
     <script src="js/bootstrap.min.js"></script>
     
     <script src="js/typeahead.min.js"></script>
+    <script src="js/jquery.timeago.js"></script>
     
     <script>
     $(document).ready(function(){
+    	jQuery("abbr.timeago").timeago();
     	
     	/*$(document).on('typeahead:opened', function(event, datum) {
     		
