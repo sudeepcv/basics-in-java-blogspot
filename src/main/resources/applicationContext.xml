@@ -30,6 +30,7 @@
 					<bean class="org.springframework.web.accept.PathExtensionContentNegotiationStrategy">
 						<constructor-arg>
 							<map>
+							    <entry key="html" value="text/html"/>   
 								<entry key="json" value="application/json" />
 								<entry key="xml" value="application/xml" />
 							</map>
