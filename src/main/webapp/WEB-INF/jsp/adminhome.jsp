@@ -5,7 +5,8 @@
     <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %> 
     <%@ page import="java.util.Date" %>
     <%@ page import ="java.text.SimpleDateFormat" %>  
-    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+    <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -55,7 +56,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!-- <a class="navbar-brand" href="index.html">Start Bootstrap</a> -->
+                <a class="navbar-brand" href="index.html">Welcome AdminUser:<sec:authentication property="name"/>!</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -83,14 +84,10 @@
            
              
              <li>
-             	<form class="navbar-form navbar-left" role="search">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search">
-  </div>
-  <button class="btn btn-default" type="submit">
-<span class="glyphicon glyphicon-search"></span>
-</button>
-</form>
+        <a href="j_spring_security_logout">
+        	<span class="glyphicon glyphicon-log-out white"></span> Logout
+        </a>
+
              </li>
              
              

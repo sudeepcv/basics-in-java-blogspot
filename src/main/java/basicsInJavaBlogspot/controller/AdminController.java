@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,10 +58,19 @@ public class AdminController {
 		model.addAttribute("singlePost",singlePost);
 		return "blogpost";
 	}
-	@RequestMapping(value="/login")
-	public String login(){
+	@RequestMapping(value="/login",method=RequestMethod.GET)
+	public String login(Model model){
 		return "login";
 	}
+	
+	@RequestMapping(value="/loginFailed", method=RequestMethod.GET)
+	public String loginFailed(ModelMap model) {
+		System.out.println("Login Failed");
+		
+		model.addAttribute("error", "true");
+		return "login";
+	}
+	
 	
 	
 	@RequestMapping(value="/addcomment",method=RequestMethod.POST)
@@ -112,7 +122,9 @@ public class AdminController {
 	@RequestMapping(value="/commentsAprove",method=RequestMethod.POST)
 	public @ResponseBody String aproveComments(@RequestParam("commentId") Long commentId){
 		commentRepository.setStatus(commentId);
-		return "{\"success\":\"success\"}";
+		String html="<b>abc</abc>";
+		return html;
+		//return "{\"success\":\"success\"}";
 	}
 	
 	

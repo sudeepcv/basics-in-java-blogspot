@@ -126,6 +126,8 @@
                 <p><b><fmt:formatDate pattern="MMMM" value="${postDate}" /></b></p>
                 <p><b><fmt:formatDate pattern="yyyy" value="${postDate}" /></b></p>
                 
+                
+                
                
             </div>
        
@@ -142,6 +144,9 @@
                 <ul class="list-inline">
                 	<a href="#"><i class="fa fa-clock-o"></i></a> 
                 	<li><a href="#">
+                	
+                	
+            
                 	<abbr class="timeago" title="${allPosts.date}">${postDate}</abbr>
                 	</a></li>
                 	

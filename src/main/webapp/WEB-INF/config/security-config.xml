@@ -14,13 +14,27 @@
 	
 
 	<http auto-config="true">
+	<intercept-url pattern="/index.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+	<intercept-url pattern="/loginFailed.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+	<intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+	<intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="/fonts/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="/js/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		
+		
 		<intercept-url pattern="/**" access="ROLE_USER" />
+		
+		
+		<form-login login-page="/login.html" authentication-failure-url="/loginFailed.html"/>
+		<logout logout-success-url="/index.html"/>
+		
 	</http>
 
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="bryan" password="secret" authorities="ROLE_USER"/>
+				<user name="sudeep" password="password" authorities="ROLE_USER"/>
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>

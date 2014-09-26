@@ -235,9 +235,11 @@
         $('button[class="btn btn-warning aproveButton"]').on('click',function(e){
         	var commentId=$(this).attr('id');
         	e.preventDefault();
-        	$.post('commentsAprove.json',{commentId:commentId})
+        	$.post('commentsAprove.html',{commentId:commentId})
         	.done(function(data){
+        		$('#'+commentId).prop('disabled', true);
         		alert("aproved success");
+        		//alert(data);
         	})
         	.fail(function(){
         		alert("error");
