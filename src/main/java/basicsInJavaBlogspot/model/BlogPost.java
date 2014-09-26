@@ -31,7 +31,8 @@ public class BlogPost {
 	}
 	@Column(columnDefinition="TEXT",length = 5000)
 	private String content;
-	@Temporal(TemporalType.DATE)
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 	public String getContent() {
 		return content;
