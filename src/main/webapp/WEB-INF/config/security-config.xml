@@ -15,6 +15,7 @@
 
 	<http auto-config="true">
 	<intercept-url pattern="/index.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+	<intercept-url pattern="/getBlogTitles.json/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>	
 	<intercept-url pattern="/loginFailed.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 	<intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 	<intercept-url pattern="/css/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
