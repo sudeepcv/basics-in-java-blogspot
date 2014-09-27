@@ -18,6 +18,20 @@
     <context:component-scan base-package="basicsInJavaBlogspot" />
     <jpa:repositories base-package="basicsInJavaBlogspot.repository"></jpa:repositories>
     
+    
+    
+  <bean id="greetingService" class="basicsInJavaBlogspot.webserviceJersey.GreetingServiceImpl"/>
+
+
+    
+    <bean class="basicsInJavaBlogspot.webserviceJersey.TestService"/>
+    
+    
+    
+    
+    
+    
+    
     <mvc:annotation-driven/>
     
     
