@@ -56,8 +56,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                 	
-                	<li class="active">
-                		<a href="">Home</a>
+                	<li >
+                		<a href="index.html">Home</a>
                 		
                 		
                 		</li>
@@ -66,7 +66,7 @@
                     </li>
                 
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="#" class="active">Contact</a>
                     </li>
                     
                       <li>
@@ -111,55 +111,46 @@
             </div>
         </div>
         <!-- /.row -->
-
-                <!-- Blog Post Row -->
-    
-                
-  <c:forEach items="${allPosts}" var="allPosts">              
+        <!-- Content Row -->
         <div class="row">
-            <div class="col-md-1 text-center">
-<c:set var="postDate" value="${allPosts.date}" />   
- <c:set var="fulConten" value="${allPosts.content}"/>
-<c:set var="contentlill" value="${fn:substring(fulConten,0,335)}.." />
-            	
-                <p class=""><h2><b><fmt:formatDate pattern="dd" value="${postDate}" /></b></h2></p>
-                <p><b><fmt:formatDate pattern="MMMM" value="${postDate}" /></b></p>
-                <p><b><fmt:formatDate pattern="yyyy" value="${postDate}" /></b></p>
+            <!-- Map Column -->
+            <div class="col-md-8">
+                <!-- Embedded Google Map -->
+                <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:600px;"><div id="gmap_canvas" style="height:500px;width:600px;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.trivoo.net" id="get-map-data">www.trivoo.net</a></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(10.8067836,76.19648519999998),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(10.8067836, 76.19648519999998)});infowindow = new google.maps.InfoWindow({content:"<b>Pattambi</b><br/><br/> Pattambi" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
                 
-                
-                
-               
             </div>
-       
-            <div class="col-md-11">
-                <h3>
-                    <a href="${allPosts.title}.html"><b>${allPosts.title}</b></a>
-                </h3>
-             
-                <p>${contentlill }</p>
-              
-                <div>
-               <a class="btn btn-primary" href="${allPosts.title}.html">Read More <i class="fa fa-angle-right"></i></a>   	               
-                <div class="pull-right">
-                <ul class="list-inline">
-                	<a href="#"><i class="fa fa-clock-o"></i></a> 
-                	<li><a href="#">
-                	
-                	
-            
-                	<abbr class="timeago" title="${allPosts.date}">${postDate}</abbr>
-                	</a></li>
-                	
-                	<li><a href="#"><i class="glyphicon glyphicon-comment"></i> ${fn:length(allPosts.comments)} Comments</a></li>
-                	
-                	</div>
-               </div>
+            <!-- Contact Details Column -->
+            <div class="col-md-4">
+                <h3>Contact Details</h3>
+                <p>
+                    Sudeep cv<br>
+                </p>
+                <p><i class="fa fa-phone"></i> 
+                    <abbr title="Phone">P</abbr></p>
+                <p><i class="fa fa-envelope-o"></i> 
+                    <abbr title="Email">E</abbr>: <a href="mailto:informsudeep@gmail.com">informsudeep@gmail.com</a>
+                </p>
+                <p><i class="fa fa-clock-o"></i> 
+                    <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
+                <ul class="list-unstyled list-inline list-social-icons">
+                    <li>
+                        <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                    </li>
+                </ul>
             </div>
         </div>
-        
-         <hr>
-      </c:forEach>  
         <!-- /.row -->
+        
+        
 
        
 

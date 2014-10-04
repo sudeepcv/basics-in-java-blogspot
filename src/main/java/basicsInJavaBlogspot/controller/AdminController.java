@@ -58,6 +58,10 @@ public class AdminController {
 		model.addAttribute("singlePost",singlePost);
 		return "blogpost";
 	}
+	@RequestMapping(value="/contact")
+	public String contact(){
+		return "contact";
+	}
 	@RequestMapping(value="/login",method=RequestMethod.GET)
 	public String login(Model model){
 		return "login";
