@@ -65,8 +65,8 @@
                         <a data-toggle="modal" data-target="#aboutMeModal" >About</a>
                     </li>
                 
-                    <li>
-                        <a href="#" class="active">Contact</a>
+                    <li class="active">
+                        <a href="#" >Contact</a>
                     </li>
                     
                       <li>
