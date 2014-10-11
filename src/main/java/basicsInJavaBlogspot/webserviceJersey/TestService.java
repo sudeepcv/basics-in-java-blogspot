@@ -7,12 +7,12 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 
 import basicsInJavaBlogspot.model.BlogPost;
@@ -23,6 +23,8 @@ import basicsInJavaBlogspot.repository.BlogRepository;
 public class TestService {
 	@Autowired
 	private BlogRepository blogRepository;
+	
+//	/ws/blogs/
 	
 	@POST
 	@Path("addpostJsonObj")
@@ -61,7 +63,7 @@ public class TestService {
 	
 	
     @GET
-    @Produces({MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     public List<BlogPost> blogposts() {
         return blogRepository.findAll();
     }
@@ -69,7 +71,8 @@ public class TestService {
     @GET
     @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
     @Path("{id}")
-    public BlogPost getBlogByid(@Param("id") Long id) {
+    public BlogPost getBlogByid(@PathParam("id") Long id) {
+    	System.out.println("id iiiiiiiiiiiiiiiiiiiii:"+id);
         return blogRepository.findOne(id);
     }
     
