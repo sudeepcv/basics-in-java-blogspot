@@ -61,7 +61,7 @@ public class TestService {
 	
 	
     @GET
-    @Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_XML})
     public List<BlogPost> blogposts() {
         return blogRepository.findAll();
     }
